@@ -2,6 +2,14 @@
 	
 	cbClient = new cfcouchbase.CouchbaseClient();
 	
+	cbClient.saveView(
+		'Cartoons',
+		'listCharacters',
+		'function (doc, meta) {
+		  emit(meta.id, doc.name);
+		}'
+	);			
+	
 	results = cbClient.query(
 				designDocumentName = "Cartoons",
 				viewName = "listCharacters",

@@ -2,6 +2,17 @@
 	
 	cbClient = new cfcouchbase.CouchbaseClient();
 	
+	cbClient.saveView(
+		'Cartoons',
+		'Features',
+		'function (doc, meta) {
+		  for(var i in doc.features) {
+		    emit(doc.features[i], doc.name);
+		  }  
+		}',
+		'_count'
+	);
+		
 	results = cbClient.query(
 				designDocumentName = "Cartoons",
 				viewName = "Features",
