@@ -2,7 +2,7 @@
     "name":"CFCouchbase Demo",
     "version":"1.0.0",
     "author":"Brad Wood",
-    "createPackageDirectory":true,
+    "createPackageDirectory":false,
     "homepage":"https://github.com/bdw429s/CFCouchbase-demo",
     "documentation":"",
     "repository":{
