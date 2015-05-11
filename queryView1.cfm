@@ -3,16 +3,16 @@
 	cbClient = new cfcouchbase.CouchbaseClient();
 	
 	cbClient.saveView(
-		'Cartoons',
-		'listCharacters',
+		'Minecraft',
+		'listItems',
 		'function (doc, meta) {
-		  emit(meta.id, doc.name);
+		  emit(meta.id, doc.username);
 		}'
 	);			
 	
 	results = cbClient.query(
-				designDocumentName = "Cartoons",
-				viewName = "listCharacters",
+				designDocumentName = "Minecraft",
+				viewName = "listItems",
 				options = {
 					sortOrder = "ASC",
 					offset = "1",

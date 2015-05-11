@@ -3,33 +3,33 @@
 	cbClient = new cfcouchbase.CouchbaseClient();
 	
 	cbClient.saveView(
-		'Cartoons',
+		'Minecraft',
 		'Features',
 		'function (doc, meta) {
 		  for(var i in doc.features) {
-		    emit(doc.features[i], doc.name);
+		    emit(doc.features[i], doc.username);
 		  }  
 		}',
 		'_count'
 	);
 		
 	results = cbClient.query(
-				designDocumentName = "Cartoons",
+				designDocumentName = "Minecraft",
 				viewName = "Features",
 				options = {
-					key = "gloves"
+					key = "scary"
 				}
 			  );
 	
-	writeOutput("Number of characters wearing gloves: " & results[1].value);
+	writeOutput("Number of scary items: " & results[1].value);
 	
 	writeOutput("<br><br>");
 	
 	results = cbClient.query(
-				designDocumentName = "Cartoons",
+				designDocumentName = "Minecraft",
 				viewName = "Features",
 				options = {
-					key = "gloves",
+					key = "scary",
 					reduce = false
 				}
 			  );

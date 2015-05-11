@@ -3,60 +3,50 @@
 	cbClient = new cfcouchbase.CouchbaseClient();
 	
 	cbClient.set(1,{
-		name: "Micky",
-		animal: "mouse",
-		gender: "male",
+		username: "wither",
+		group: "monster",
+		status: "active",
 		features = [
-			"ears",
-			"gloves"			
+			"small",
+			"scary",
+			"mulitheaded",
+			"created"
 		]
 	});
 	
 	cbClient.set(2,{
-		name: "Minnie",
-		animal: "mouse",
-		gender: "female",
+		username: "zombie",
+		group: "monster",
+		status: "active",
 		features = [
-			"ears",
-			"gloves",
-			"bow"	
+			"small",
+			"cute",
+			"spawned"
 		]
 	});
 	
 	cbClient.set(3,{
-		name: "Donald",
-		animal: "duck",
-		gender: "male",
+		username: "slime",
+		group: "block",
+		status: "inactive",
 		features = [
-			"hat",
-			"bow tie"	
+			"swamp biomes",
+			"spawned"
 		]
 	});
 	
 	cbClient.set(4,{
-		name: "Goofy",
-		animal: "dog",
-		gender: "male",
+		username: "enderman",
+		group: "monster",
+		status: "inactive",
 		features = [
-			"hat",
-			"vest",
-			"gloves"	
+			"scary",
+			"spawned"
 		]
 	});
 	
 	
-	cbClient.set(5,{
-		name: "Pete",
-		animal: "cat",
-		gender: "male",
-		features = [
-			"fat",
-			"gloves",
-			"mean"
-		]
-	});
-	
-	writeDump(cbClient.get(3));
+	writeDump(cbClient.get(1));
 		
 	cbClient.shutdown();
 	
